@@ -1,0 +1,9 @@
+ - script: |
+        pip3 install checkov
+      displayName: 'Install checkov'
+
+    # Verify Terraform files with Checkov
+    - script: |
+        checkov --directory $(System.DefaultWorkingDirectory) -o junitxml > $(System.DefaultWorkingDirectory)/Checkov-Report.xml
+      displayName: 'Verify Terraform with Checkov'
+      name: 'checkov_check'
