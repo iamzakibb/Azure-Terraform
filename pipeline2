@@ -38,3 +38,10 @@ stages:
         testRunTitle: Checkov Scan
         failTaskOnFailedTests: false
         publishRunAttachments: true
+***********
+
+
+
+ - script: |
+        python -m pip install checkov
+      displayName: 'Install checkov'
